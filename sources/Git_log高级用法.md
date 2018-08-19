@@ -250,7 +250,7 @@ git log master..feature
 
 其中的 `master..feature` 范围包含了在 feature 分支而不在 master 分支中所有的提交。换句话说，这个命令可以看出从 master 分支 fork 到 feature 分支后发生了哪些变化。它可以这样可视化：
 
-![enter image description here](https://www.atlassian.com/git/images/tutorials/advanced/git-log/01.svg)
+![enter image description here](https://wac-cdn.atlassian.com/dam/jcr:b443a307-2df4-4080-948b-f5b9a1f8fd40/01.svg)
 
 注意如果你更改范围的前后顺序（feature..master），你会获取到 master 分支而非 feature 分支上的所有提交。如果 `git log` 输出了全部两个分支的提交，这说明你的提交历史已经分叉了。
 
@@ -278,10 +278,8 @@ git log --merges
 
 这些技巧是你 Git 工具箱中重要的部分，不过注意 `git log` 往往和其他 Git 命令连着使用。当你找到了你要的提交，你把它传给 `git checkout`、`git revert` 或是其他控制提交历史的工具。所以，请继续坚持 Git 高级用法的学习。
 
-
-
-> 这篇文章是[**「git-recipes」**](https://github.com/geeeeeeeeek/git-recipes/)的一部分，点击[**目录**](https://github.com/geeeeeeeeek/git-recipes/wiki/)查看所有章节。
+> 这篇文章是[**「git-recipes」**](https://github.com/geeeeeeeeek/git-recipes/)的一部分，点击 [**目录**](https://github.com/geeeeeeeeek/git-recipes/wiki/) 查看所有章节。
 >
-> 如果你觉得文章对你有帮助，欢迎点击右上角的 ***Star***:star2: 或 ***Fork***:fork_and_knife:。
+> 如果你觉得文章对你有帮助，欢迎点击右上角的 **Star** :star2: 或 **Fork** :fork_and_knife:。
 >
-> 如果你发现了错误，或是想要加入协作，请参阅[Wiki协作说明](https://github.com/geeeeeeeeek/git-recipes/issues/1)。
+> 如果你发现了错误，或是想要加入协作，请参阅 [Wiki 协作说明](https://github.com/geeeeeeeeek/git-recipes/issues/1)。

@@ -6,7 +6,7 @@
 
 Git 钩子是在 Git 仓库中特定事件发生时自动运行的脚本。它可以让你自定义 Git 内部的行为，在开发周期中的关键点触发自定义的行为。
 
-![enter image description here](https://www.atlassian.com/git/images/tutorials/advanced/git-hooks/01.svg)
+![enter image description here](https://wac-cdn.atlassian.com/dam/jcr:ac22adee-d740-4216-a92a-33c14b5623e5/01.svg)
 
 Git 钩子最常见的使用场景包括推行提交规范，根据仓库状态改变项目环境，和接入持续集成工作流。但是，因为脚本可以完全定制，你可以用 Git 钩子来自动化或者优化你开发工作流中任意部分。
 
@@ -78,7 +78,7 @@ with open(commit_msg_filepath, 'w') as f:
 
 在开发团队中维护钩子是比较复杂的，因为 `.git/hooks` 目录不随你的项目一起拷贝，也不受版本控制影响。一个简单的解决办法是把你的钩子存在项目的实际目录中（在 `.git` 外）。这样你就可以像其他文件一样进行版本控制。为了安装钩子，你可以在 `.git/hooks` 中创建一个符号链接，或者简单地在更新后把它们复制到 `.git/hooks` 目录下。
 
-![enter image description here](https://www.atlassian.com/git/images/tutorials/advanced/git-hooks/02.svg)
+![enter image description here](https://wac-cdn.atlassian.com/dam/jcr:e068ea71-a552-4d07-9917-49104f4d382e/02.svg)
 
 作为备选方案，Git 同样提供了一个模板目录机制来更简单地自动安装钩子。每次你使用 `git init` 或 `git clone` 时，模板目录文件夹下的所有文件和目录都会被复制到 `.git` 文件夹。
 
@@ -330,7 +330,7 @@ for root, dirs, files in os.walk('.'):
 
 `pre-rebase` 钩子在 `git rebase` 发生更改之前运行，确保不会有什么糟糕的事情发生。
 
-这个钩子有两个参数：frok 之前的上游分支，将要 rebase 的下游分支。如果 rebase 当前分支则第二个参数为空。以非 0 状态退出会放弃这次 rebase。
+这个钩子有两个参数：fork 之前的上游分支，将要 rebase 的下游分支。如果 rebase 当前分支则第二个参数为空。以非 0 状态退出会放弃这次 rebase。
 
 比如说，如果你想彻底禁用 rebase 操作，你可以使用下面的 `pre-rebase` 脚本：
 
@@ -369,7 +369,7 @@ The pre-rebase hook refused to rebase.
 
 `pre-receive` 钩子在有人用 `git push` 向仓库推送代码时被执行。它只存在于远端仓库中，而不是原来的仓库中。
 
-这个钩子在任意引用被更新钱被执行，所以这是强制推行开发规范的好地方。如果你不喜欢推送的那个人（多大仇 = =），提交信息的格式，或者提交的更改，你都可以拒绝这次提交。虽然你不能阻止开发者写出糟糕的代码，但你可以用 `pre-receive` 防止这些代码流入官方的代码库。
+这个钩子在任意引用被更新前被执行，所以这是强制推行开发规范的好地方。如果你不喜欢推送的那个人（多大仇 = =），提交信息的格式，或者提交的更改，你都可以拒绝这次提交。虽然你不能阻止开发者写出糟糕的代码，但你可以用 `pre-receive` 防止这些代码流入官方的代码库。
 
 这个脚本没有参数，但每一个推送上来的引用都会以下面的格式传入脚本的单独一行：
 
@@ -443,10 +443,10 @@ print "Moving '%s' from %s to %s" % (branch, old_commit, new_commit)
 
 在这篇文章中，我们学习了如果用 Git 钩子来修改内部行为，当仓库中特定的事件发生时接受消息。钩子是存在于 `git/hooks` 仓库中的普通脚本，因此也非常容易安装和定制。
 
-我们还看了一些常用的本地和服务端的钩子。这使得我们能够介入到整个开发生命周期中去。我们现在知道了如何在创建提交或推送的每个阶段执行自定义的操作。有了这些简单的脚本知识，你就可以对 Git 仓库为所欲为了 : )
+我们还看了一些常用的本地和服务端的钩子。这使得我们能够介入到整个开发生命周期中去。我们现在知道了如何在创建提交或推送的每个阶段执行自定义的操作。有了这些简单的脚本知识，你就可以对 Git 仓库为所欲为了 :]
 
-> 这篇文章是[**「git-recipes」**](https://github.com/geeeeeeeeek/git-recipes/)的一部分，点击[**目录**](https://github.com/geeeeeeeeek/git-recipes/wiki/)查看所有章节。
+> 这篇文章是[**「git-recipes」**](https://github.com/geeeeeeeeek/git-recipes/)的一部分，点击 [**目录**](https://github.com/geeeeeeeeek/git-recipes/wiki/) 查看所有章节。
 >
-> 如果你觉得文章对你有帮助，欢迎点击右上角的 ***Star***:star2: 或 ***Fork***:fork_and_knife:。
+> 如果你觉得文章对你有帮助，欢迎点击右上角的 **Star** :star2: 或 **Fork** :fork_and_knife:。
 >
-> 如果你发现了错误，或是想要加入协作，请参阅[Wiki协作说明](https://github.com/geeeeeeeeek/git-recipes/issues/1)。
+> 如果你发现了错误，或是想要加入协作，请参阅 [Wiki 协作说明](https://github.com/geeeeeeeeek/git-recipes/issues/1)。
